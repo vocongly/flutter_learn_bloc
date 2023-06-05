@@ -28,8 +28,7 @@ class PostBloc extends Bloc<PostEvent, PostState> {
 
   final http.Client httpClient;
 
-  Future<void> _onPostFetched(
-      PostFetched event, Emitter<PostState> emit) async {
+  Future<void> _onPostFetched(PostFetched event, Emitter<PostState> emit) async {
     if (state.hasReachedMax) return;
     try {
       if (state.status == PostStatus.initial) {
